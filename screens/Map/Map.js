@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { View, Image } from 'react-native';
 import { Text, Button, TextInput } from 'react-native-paper';
-import { styles } from './loginStyles';
+import { styles } from './mapStyles';
 
-const Login = ({ navigation, endpoint }) => {
+const Map = ({ navigation, endpoint }) => {
 
     const [loginInput, setloginInput] = useState('');
     const [senhaInput, setSenhaInput] = useState('');
@@ -73,4 +73,4 @@ const Login = ({ navigation, endpoint }) => {
     );
 };
 
-export default Login;
+export default Map;

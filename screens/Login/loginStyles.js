@@ -64,6 +64,7 @@ export const styles = StyleSheet.create({
         marginBottom: 50
     },
     divider: {
+        marginBottom: '2rem',
         borderRadius: 10,
         marginVertical: 50,
         width: 180,
