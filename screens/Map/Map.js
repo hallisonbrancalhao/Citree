@@ -53,19 +53,12 @@ const Map = ({ navigation, endpoint }) => {
 
 
             </View>
-            <View style={styles.buttonsSection}>
+            <View style={styles.card}>
                 <Button
                     style={styles.buttonLogin}
                     color='black'
                     onPress={handleLogin}>
                     Login
-                </Button>
-
-                <Button
-                    style={styles.buttonCadastro}
-                    color='white'
-                    onPress={handleLogin}>
-                    Cadastro
                 </Button>
             </View>
 
