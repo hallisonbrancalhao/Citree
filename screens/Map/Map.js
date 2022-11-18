@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { View, Image } from 'react-native';
 import { Text, Button, TextInput } from 'react-native-paper';
+import Navbar from '../../components/Navbar';
 import { styles } from './mapStyles';
 
-const Map = ({ navigation, endpoint }) => {
-
-    const [loginInput, setloginInput] = useState('');
-    const [senhaInput, setSenhaInput] = useState('');
+const Map = ({ navigation, apiLink, endpoint }) => {
 
     const themeWhite = {
         colors: {
@@ -19,56 +17,42 @@ const Map = ({ navigation, endpoint }) => {
     };
 
     const handleLogin = () => {
-        navigation.navigate('map');
+        navigation.navigate('Formulario', apiLink, endpoint);
     }
 
     return (
         <View style={styles.main}>
+
             <Image
-                style={styles.homeLogo}
-                source={require('../../assets/logo.png')}
+                style={styles.imgFiveIcon}
+                source={require('../../assets/fv_icon.svg')}
             />
 
-            <View style={styles.inputSec}>
+            <Image
+                style={styles.imgMap}
+                source={require('../../assets/map.png')}
+            />
 
-                <Text style={styles.label}>E-MAIL OU TELEFONE</Text>
-                <TextInput
-                    style={styles.input}
-                    theme={themeWhite}
-                    value={loginInput}
-                    onChangeText={setloginInput}
-                />
+            <View style={styles.card}>
+                <Text style={styles.card_title}>Você está no endereço:</Text>
+                <View style={styles.card_localizacao}>
+                    <Image
+                        style={styles.card_localizacao__img}
+                        source={require('../../assets/localizacao.svg')}
+                    />
+                    <Text style={styles.card_localizacao__text}>Av. São paulo - zona 2 - maringá</Text>
+                </View>
 
-                <Text style={styles.label}>SENHA</Text>
+                <Text style={styles.card_info}>AINDA NÃO HÁ REPORTES OARA ESTA LOCALIZAÇÃO</Text>
 
-                <TextInput
-                    secureTextEntry={true}
-                    style={styles.input}
-                    theme={themeWhite}
-                    value={senhaInput}
-                    onChangeText={setSenhaInput}
-                />
-
-                <Text style={styles.link}>Esqueceu sua senha?</Text>
-
-
-            </View>
-            <View style={styles.buttonsSection}>
                 <Button
-                    style={styles.buttonLogin}
+                    style={styles.buttonReport}
                     color='black'
                     onPress={handleLogin}>
-                    Login
-                </Button>
-
-                <Button
-                    style={styles.buttonCadastro}
-                    color='white'
-                    onPress={handleLogin}>
-                    Cadastro
+                    REGISTRAR REPORTE
                 </Button>
             </View>
-
+            <Navbar />
         </View>
     );
 };

@@ -4,10 +4,11 @@ import { styles } from './homeStyles';
 
 const Home = ({ navigation }) => {
 
+    const apiLink = 'https://crudcrud.com/api';
     const endpoint = 'fcde91534c8a4b7e9a6383fda6ba6f41';
 
     const goLogin = () => {
-        navigation.navigate('Login', endpoint)
+        navigation.navigate('Login', apiLink, endpoint);
     }
 
     return (
