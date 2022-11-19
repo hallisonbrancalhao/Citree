@@ -24,6 +24,7 @@ const Formulario = ({ navigation, apiLink, endpoint }) => {
     const [observacoes, setObservacoes] = useState('');
 
     const handleSend = async () => {
+        navigation.navigate('Solicitacoes');
         await axios.post(`${apiLink}/${endpoint}/solicitacoes`, {
             nome: nomeInput,
             telefone: telefoneInput,
@@ -31,7 +32,6 @@ const Formulario = ({ navigation, apiLink, endpoint }) => {
             localizacao: localizacao,
             observacoes: observacoes
         });
-        navigation.navigate('solicitacoes');
     }
 
     return (

@@ -4,6 +4,7 @@ import React from 'react'
 import { View, Image } from 'react-native';
 
 const Navbar = () => {
+
     return (
         <View style={styles.main}>
             <Image
@@ -17,6 +18,7 @@ const Navbar = () => {
             <Image
                 style={styles.icon3}
                 source={require('../assets/alert_icon.svg')}
+                onClick={()=>{console.log('imagem 3')}}
             />
         </View>
     )
